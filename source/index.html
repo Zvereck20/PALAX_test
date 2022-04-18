@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html class="page" lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Palax__test</title>
+
+  <link rel="preload" href="fonts/Montserrat-Medium.woff2" as="font">
+  <link rel="preload" href="fonts/Montserrat-Regular.woff2" as="font">
+  <link rel="preload" href="fonts/Montserrat-SemiBold.woff2" as="font">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.min.css">
+</head>
+
+<body class="body">
+
+  <main class="main">
+    <div class="container">
+      <section class="appartments">
+        <div class="appartments__wrap">
+          <h1 class="visually-hidden">Планировки квартир</h1>
+          <p class="appartments__title">Найдено 236 планировок</p>
+          <div class="appartments__filter">
+            <p class="appartments__filter-quantity">0</p>
+            <p class="appartments__filter-text">Фильтр</p>
+          </div>
+          <button class="button" type="reset" form="filters">Сбросить все</button>
+          <ul class="appartments__category">
+            <li class="appartments__category-type">До 50 м²</li>
+            <li class="appartments__category-type">Готовое жилье</li>
+            <li class="appartments__category-type">Два санузла</li>
+            <li class="appartments__category-type">Балкон</li>
+            <li class="appartments__category-type">Дом сдан</li>
+          </ul>
+        </div>
+
+        <div class="appartments__wrap">
+          <div class="appartments__sorting">
+            <p>Сначала дешевле</p>
+            <div class="appartments__sorting-wrap">
+              <button class="appartments__sorting-btn">
+                <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <use xlink:href="img/sprite.svg#arrow-top"></use>
+                </svg>
+              </button>
+              <button class="appartments__sorting-btn">
+                <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <use xlink:href="img/sprite.svg#arrow-bottom"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="appartments__view">
+            <button class="appartments__view-btn appartments__view-btn--list">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="img/sprite.svg#list-icon"></use>
+              </svg>
+            </button>
+            <button class="appartments__view-btn appartments__view-btn--bar">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="img/sprite.svg#bar-icon"></use>
+              </svg>
+            </button>
+          </div>
+          <ul class="appartments__list">
+            <!-- Место для интеграции карточек квартир -->
+          </ul>
+        </div>
+      </section>
+
+      <section class="sidebar">
+        <h2 class="visually-hidden">Фильтр поиска</h2>
+
+        <form class="sidebar__filters" method="GET" action="#" id="filters">
+          <fieldset class="sidebar__rooms">
+            <legend class="block-heading">Количество комнат</legend>
+            <ul class="sidebar__border">
+              <li class="sidebar__border-type">
+                <input type="checkbox" name="rooms" id="studio" value="studio">
+                <label for="studio">
+                  C
+                </label>
+              </li>
+              <li class="sidebar__border-type">
+                <input type="checkbox" name="rooms" id="1">
+                <label for="1">
+                  1
+                </label>
+              </li>
+              <li class="sidebar__border-type">
+                <input type="checkbox" name="rooms" id="1.5">
+                <label for="1.5">
+                  1+
+                </label>
+              </li>
+              <li class="sidebar__border-type">
+                <input type="checkbox" name="rooms" id="2">
+                <label for="2">
+                  2
+                </label>
+              </li>
+              <li class="sidebar__border-type">
+                <input type="checkbox" name="rooms" id="2.5">
+                <label for="2.5">
+                  2+
+                </label>
+              </li>
+              <li class="sidebar__border-type">
+                <input type="checkbox" name="rooms" id="3">
+                <label for="3">
+                  3
+                </label>
+              </li>
+              <li class="sidebar__border-type">
+                <input type="checkbox" name="rooms" id="3.5">
+                <label for="3.5">
+                  3+
+                </label>
+              </li>
+              <li class="sidebar__border-type">
+                <input type="checkbox" name="rooms" id="4">
+                <label for="4">
+                  4...
+                </label>
+              </li>
+            </ul>
+          </fieldset>
+
+          <fieldset class="sidebar__layout">
+            <legend class="block-heading">Особенности планировки</legend>
+            <ul class="sidebar__checkbox">
+              <li class="sidebar__checkbox-type">
+                <input type="checkbox" name="layout" id="2 or more bathrooms">
+                <label for="2 or more bathrooms">
+                  2 и более санузла
+                </label>
+              </li>
+              <li class="sidebar__checkbox-type">
+                <input type="checkbox" name="layout" id="large loggia">
+                <label for="large loggia">
+                  Большая лоджия
+                </label>
+              </li>
+              <li class="sidebar__checkbox-type">
+                <input type="checkbox" name="layout" id="wardrobe">
+                <label for="wardrobe">
+                  Гардеробная
+                </label>
+              </li>
+              <li class="sidebar__checkbox-type">
+                <input type="checkbox" name="layout" id="kitchen-living room">
+                <label for="kitchen-living room">
+                  Кухня-гостиная
+                </label>
+              </li>
+              <li class="sidebar__checkbox-type">
+                <input type="checkbox" name="layout" id="loggia">
+                <label for="loggia">
+                  Лоджия
+                </label>
+              </li>
+              <li class="sidebar__checkbox-type">
+                <input type="checkbox" name="layout" id="laundry room">
+                <label for="laundry room">
+                  Постирочная
+                </label>
+              </li>
+              <li class="sidebar__checkbox-type visually-hidden">
+                <input type="checkbox" name="layout" id="hidden niche">
+                <label for="hidden niche">
+                  Скрытая ниша
+                </label>
+              </li>
+              <li class="sidebar__checkbox-type visually-hidden">
+                <input type="checkbox" name="layout" id="two floors">
+                <label for="two floors">
+                  Два этажа
+                </label>
+              </li>
+            </ul>
+            <button class="button button--small" type="button">
+              Показать все
+              <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="img/sprite.svg#arrow-bottom-excretion"></use>
+              </svg>
+            </button>
+          </fieldset>
+
+          <fieldset class="sidebar__project">
+            <legend class="block-heading">Проект</legend>
+            <a href="#" class="button button--small">Выбрать на карте</a>
+            <ul class="sidebar__border">
+              <li class="sidebar__border-type sidebar__border-type--padding">
+                <input type="checkbox" name="project" id="znak" value="ZNAK">
+                <label for="znak">
+                  <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <use xlink:href="img/sprite.svg#znak-logo"></use>
+                  </svg>
+                  ZNAK
+                </label>
+              </li>
+              <li class="sidebar__border-type sidebar__border-type--padding">
+                <input type="checkbox" name="project" id="lomonosova" value="На Ломоносова">
+                <label for="lomonosova">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_10_22638)">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M3.92289 6.42062H11.4497V11.4213H3.92289V14H14.0348V3.83718H3.92289V6.42062ZM2.58511 0H0V14H2.58511V10.2578H10.1452V7.6791H2.58511V2.5787H14.0348V0H2.58511Z"
+                        fill="url(#paint0_linear_10_22638)" />
+                    </g>
+                    <defs>
+                      <linearGradient id="paint0_linear_10_22638" x1="2.89975" y1="2.15682e-07" x2="7.79851"
+                        y2="13.2813" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#EA5C0A" />
+                        <stop offset="1" stop-color="#E40349" />
+                      </linearGradient>
+                      <clipPath id="clip0_10_22638">
+                        <rect width="14" height="14" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                  На Ломоносова
+                </label>
+              </li>
+              <li class="sidebar__border-type sidebar__border-type--padding">
+                <input type="checkbox" name="project" id="vasilki" value="Васильки">
+                <label for="vasilki">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <use xlink:href="img/sprite.svg#vasilki-logo"></use>
+                  </svg>
+                  Васильки
+                </label>
+              </li>
+              <li class="sidebar__border-type sidebar__border-type--padding">
+                <input type="checkbox" name="project" id="calinina" value="На Калинина">
+                <label for="calinina">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_10_22821)">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M3.92289 6.42062H11.4497V11.4213H3.92289V14H14.0348V3.83718H3.92289V6.42062ZM2.58511 0H0V14H2.58511V10.2578H10.1452V7.6791H2.58511V2.5787H14.0348V0H2.58511Z"
+                        fill="url(#paint0_linear_10_22821)" />
+                    </g>
+                    <defs>
+                      <linearGradient id="paint0_linear_10_22821" x1="7.01819" y1="14" x2="7.01819" y2="0"
+                        gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#A41A68" />
+                        <stop offset="0.88" stop-color="#C24A87" />
+                        <stop offset="1" stop-color="#C24A87" />
+                      </linearGradient>
+                      <clipPath id="clip0_10_22821">
+                        <rect width="14" height="14" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                  На Калинина
+                </label>
+              </li>
+            </ul>
+          </fieldset>
+
+          <div class="sidebar__house">
+            <h3 class="block-heading">Дом</h3>
+            <a href="#" class="button button--opacity button--small">Выбрать на генплане</a>
+          </div>
+
+          <fieldset class="sidebar__price">
+            <legend class="block-heading">Стоимость, ₽</legend>
+            <div class="sidebar__range-wrap">
+              <label for="min-price">
+                от <span>2 354 000</span>
+              </label>
+              <label for="max-price">
+                до <span>3 700 000</span>
+              </label>
+            </div>
+            <div class="sidebar__range-container">
+              <input type="range" min="2354000" max="3027000" value="2354000" step="1000" class="slider" id="min-price"
+                name="min-price">
+              <input type="range" min="3028000" max="3700000" value="3700000" step="1000" class="slider" id="max-price"
+                name="max-price">
+            </div>
+          </fieldset>
+
+          <fieldset class="sidebar__size">
+            <legend class="block-heading">Площадь, м²</legend>
+            <div class="sidebar__range-wrap">
+              <label for="min-size">
+                от <span>26,8</span>
+              </label>
+              <label for="max-size">
+                до <span>50</span>
+              </label>
+            </div>
+            <div class="sidebar__range-container">
+              <input type="range" min="26.8" max="38.3" value="26.8" step="0.1" class="slider" id="min-size"
+                name="min-size">
+              <input type="range" min="38.4" max="50" value="50" step="0.1" class="slider" id="max-size"
+                name="max-size">
+            </div>
+          </fieldset>
+
+          <fieldset class="sidebar__deadline">
+            <legend class="block-heading">Срок сдачи</legend>
+            <ul class="sidebar__border">
+              <li class="sidebar__border-type sidebar__border-type--padding">
+                <input type="checkbox" name="deadline" id="ready">
+                <label for="ready">
+                  Дом сдан
+                </label>
+              </li>
+              <li class="sidebar__border-type sidebar__border-type--padding">
+                <input type="checkbox" name="deadline" id="first-2021">
+                <label for="first-2021">
+                  1 кв. 2021
+                </label>
+              </li>
+              <li class="sidebar__border-type sidebar__border-type--padding">
+                <input type="checkbox" name="deadline" id="third-2021">
+                <label for="third-2021">
+                  3 кв. 2021
+                </label>
+              </li>
+              <li class="sidebar__border-type sidebar__border-type--padding">
+                <input type="checkbox" name="deadline" id="firdt-2022">
+                <label for="firdt-2022">
+                  1 кв. 2022
+                </label>
+              </li>
+              <li class="sidebar__border-type sidebar__border-type--padding">
+                <input type="checkbox" name="deadline" id="second-2022">
+                <label for="second-2022">
+                  2 кв. 2022
+                </label>
+              </li>
+              <li class="sidebar__border-type sidebar__border-type--padding">
+                <input type="checkbox" name="deadline" id="firdt-2023">
+                <label for="firdt-2023">
+                  1 кв. 2023
+                </label>
+              </li>
+            </ul>
+          </fieldset>
+
+          <fieldset class="sidebar__view">
+            <legend class="block-heading">Вид из окна</legend>
+            <ul class="sidebar__checkbox">
+              <li class="sidebar__checkbox-type">
+                <input type="checkbox" name="view" id="yard">
+                <label for="yard">
+                  Двор
+                </label>
+              </li>
+              <li class="sidebar__checkbox-type">
+                <input type="checkbox" name="view" id="panorama">
+                <label for="panorama">
+                  Панорама города
+                </label>
+              </li>
+              <li class="sidebar__checkbox-type">
+                <input type="checkbox" name="view" id="sunshine">
+                <label for="sunshine">
+                  Закат
+                </label>
+              </li>
+              <li class="sidebar__checkbox-type">
+                <input type="checkbox" name="view" id="square">
+                <label for="square">
+                  Парк, площадь
+                </label>
+              </li>
+              <li class="sidebar__checkbox-type">
+                <input type="checkbox" name="view" id="dawn">
+                <label for="dawn">
+                  Рассвет
+                </label>
+              </li>
+            </ul>
+          </fieldset>
+
+          <fieldset class="sidebar__height">
+            <legend class="block-heading">Высота потолков, м</legend>
+            <ul class="sidebar__border">
+              <li class="sidebar__border-type sidebar__border-type--padding">
+                <input type="checkbox" name="height" id="standart">
+                <label for="standart">
+                  2,5 стандарт
+                </label>
+              </li>
+              <li class="sidebar__border-type sidebar__border-type--padding">
+                <input type="checkbox" name="height" id="comfort">
+                <label for="comfort">
+                  2,7 комфорт
+                </label>
+              </li>
+              <li class="sidebar__border-type sidebar__border-type--padding">
+                <input type="checkbox" name="height" id="hyflat">
+                <label for="hyflat">
+                  3,0 хайфлет
+                </label>
+              </li>
+              <li class="sidebar__border-type sidebar__border-type--padding">
+                <input type="checkbox" name="height" id="hyflat-2">
+                <label for="hyflat-2">
+                  3,3 хайфлет
+                </label>
+              </li>
+            </ul>
+          </fieldset>
+
+          <fieldset class="sidebar__flat">
+            <legend class="block-heading">Преимущества квартиры</legend>
+            <ul class="sidebar__checkbox">
+              <li class="sidebar__checkbox-type">
+                <input type="checkbox" name="flat" id="few-neighbors">
+                <label for="few-neighbors">
+                  Мало соседей на этаже
+                </label>
+              </li>
+              <li class="sidebar__checkbox-type">
+                <input type="checkbox" name="flat" id="arched windows">
+                <label for="arched windows">
+                  Арочные окна
+                </label>
+              </li>
+              <li class="sidebar__checkbox-type">
+                <input type="checkbox" name="flat" id="bathroom with a window">
+                <label for="bathroom with a window">
+                  Ванная с окном
+                </label>
+              </li>
+              <li class="sidebar__checkbox-type">
+                <input type="checkbox" name="flat" id="living room with two windows">
+                <label for="living room with two windows">
+                  Гостиная с двумя окнами
+                </label>
+              </li>
+              <li class="sidebar__checkbox-type">
+                <input type="checkbox" name="flat" id="3 apartments per floor">
+                <label for="3 apartments per floor">
+                  До 3-х квартир на этаже
+                </label>
+              </li>
+              <li class="sidebar__checkbox-type">
+                <input type="checkbox" name="flat" id="kitchen with a window">
+                <label for="kitchen with a window">
+                  Кухня с окном в рабочей зоне
+                </label>
+              </li>
+              <li class="sidebar__checkbox-type visually-hidden">
+                <input type="checkbox" name="flat" id="few-neighbors">
+                <label for="few-neighbors">
+                  Мало соседей на этаже
+                </label>
+              </li>
+              <li class="sidebar__checkbox-type visually-hidden">
+                <input type="checkbox" name="flat" id="arched windows">
+                <label for="arched windows">
+                  Арочные окна
+                </label>
+              </li>
+            </ul>
+            <button class="button button--small" type="button">
+              Показать все
+              <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="img/sprite.svg#arrow-bottom-excretion"></use>
+              </svg>
+            </button>
+          </fieldset>
+
+          <fieldset class="sidebar__home">
+            <legend class="block-heading">Преимущества дома</legend>
+            <ul class="sidebar__checkbox">
+              <li class="sidebar__checkbox-type">
+                <input type="checkbox" name="home" id="bicycle">
+                <label for="bicycle">
+                  Велосипедная
+                  <button class="button button--question" type="button">
+                    <span class="visually-hidden">Подробно</span>
+                    <svg width="6" height="8" viewBox="0 0 6 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <use xlink:href="img/sprite.svg#question-icon"></use>
+                    </svg>
+                  </button>
+                </label>
+              </li>
+              <li class="sidebar__checkbox-type">
+                <input type="checkbox" name="home" id="stroller">
+                <label for="stroller">
+                  Колясочная
+                  <button class="button button--question" type="button">
+                    <span class="visually-hidden">Подробно</span>
+                    <svg width="6" height="8" viewBox="0 0 6 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <use xlink:href="img/sprite.svg#question-icon"></use>
+                    </svg>
+                  </button>
+                </label>
+              </li>
+              <li class="sidebar__checkbox-type">
+                <input type="checkbox" name="home" id="storerooms">
+                <label for="storerooms">
+                  Кладовые
+                  <button class="button button--question" type="button">
+                    <span class="visually-hidden">Подробно</span>
+                    <svg width="6" height="8" viewBox="0 0 6 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <use xlink:href="img/sprite.svg#question-icon"></use>
+                    </svg>
+                  </button>
+                </label>
+              </li>
+              <li class="sidebar__checkbox-type">
+                <input type="checkbox" name="home" id="without cars">
+                <label for="without cars">
+                  Двор без машин
+                  <button class="button button--question" type="button">
+                    <span class="visually-hidden">Подробно</span>
+                    <svg width="6" height="8" viewBox="0 0 6 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <use xlink:href="img/sprite.svg#question-icon"></use>
+                    </svg>
+                  </button>
+                </label>
+              </li>
+              <li class="sidebar__checkbox-type">
+                <input type="checkbox" name="home" id="closed area">
+                <label for="closed area">
+                  Закрытая территория
+                  <button class="button button--question" type="button">
+                    <span class="visually-hidden">Подробно</span>
+                    <svg width="6" height="8" viewBox="0 0 6 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <use xlink:href="img/sprite.svg#question-icon"></use>
+                    </svg>
+                  </button>
+                </label>
+              </li>
+              <li class="sidebar__checkbox-type">
+                <input type="checkbox" name="home" id="underground parking">
+                <label for="underground parking">
+                  Подземный паркинг
+                  <button class="button button--question" type="button">
+                    <span class="visually-hidden">Подробно</span>
+                    <svg width="6" height="8" viewBox="0 0 6 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <use xlink:href="img/sprite.svg#question-icon"></use>
+                    </svg>
+                  </button>
+                </label>
+              </li>
+              <li class="sidebar__checkbox-type visually-hidden">
+                <input type="checkbox" name="home" id="bicycle">
+                <label for="bicycle">
+                  Велосипедная
+                  <button class="button button--question" type="button">
+                    <span class="visually-hidden">Подробно</span>
+                    <svg width="6" height="8" viewBox="0 0 6 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <use xlink:href="img/sprite.svg#question-icon"></use>
+                    </svg>
+                  </button>
+                </label>
+              </li>
+              <li class="sidebar__checkbox-type visually-hidden">
+                <input type="checkbox" name="home" id="stroller">
+                <label for="stroller">
+                  Колясочная
+                  <button class="button button--question" type="button">
+                    <span class="visually-hidden">Подробно</span>
+                    <svg width="6" height="8" viewBox="0 0 6 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <use xlink:href="img/sprite.svg#question-icon"></use>
+                    </svg>
+                  </button>
+                </label>
+              </li>
+            </ul>
+            <button class="button button--small" type="button">
+              Показать все
+              <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="img/sprite.svg#arrow-bottom-excretion"></use>
+              </svg>
+            </button>
+          </fieldset>
+
+          <fieldset class="sidebar__infrastructure">
+            <legend class="block-heading block-heading--excretion">Инфраструктура</legend>
+            <button class="button button--question-heading" type="button">
+              <span class="visually-hidden">Подробно</span>
+              <svg width="6" height="8" viewBox="0 0 6 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="img/sprite.svg#question-icon"></use>
+              </svg>
+            </button>
+            <ul class="sidebar__checkbox">
+              <li class="sidebar__checkbox-type">
+                <input type="checkbox" name="infrastructure" id="school">
+                <label for="school">
+                  Школа
+                </label>
+              </li>
+              <li class="sidebar__checkbox-type">
+                <input type="checkbox" name="infrastructure" id="kindergarten">
+                <label for="kindergarten">
+                  Детский сад
+                </label>
+              </li>
+              <li class="sidebar__checkbox-type">
+                <input type="checkbox" name="infrastructure" id="yard-park">
+                <label for="yard-park">
+                  Двор-парк
+                </label>
+              </li>
+              <li class="sidebar__checkbox-type">
+                <input type="checkbox" name="infrastructure" id="shops">
+                <label for="shops">
+                  Магазины
+                </label>
+              </li>
+              <li class="sidebar__checkbox-type">
+                <input type="checkbox" name="infrastructure" id="bike paths">
+                <label for="bike paths">
+                  Велодорожки
+                </label>
+              </li>
+              <li class="sidebar__checkbox-type">
+                <input type="checkbox" name="infrastructure" id="sports zones">
+                <label for="sports zones">
+                  Спортивные зоны
+                </label>
+              </li>
+              <li class="sidebar__checkbox-type visually-hidden">
+                <input type="checkbox" name="infrastructure" id="kindergarten">
+                <label for="kindergarten">
+                  Детский сад
+                </label>
+              </li>
+              <li class="sidebar__checkbox-type visually-hidden">
+                <input type="checkbox" name="infrastructure" id="yard-park">
+                <label for="yard-park">
+                  Двор-парк
+                </label>
+              </li>
+            </ul>
+            <button class="button button--small" type="button">
+              Показать все
+              <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="img/sprite.svg#arrow-bottom-excretion"></use>
+              </svg>
+            </button>
+          </fieldset>
+
+          <fieldset class="sidebar__format">
+            <legend class="block-heading">Формат дома</legend>
+            <ul class="sidebar__checkbox">
+              <li class="sidebar__checkbox-type">
+                <input type="checkbox" name="format" id="low-rise">
+                <label for="low-rise">
+                  Малоэтажный
+                </label>
+              </li>
+              <li class="sidebar__checkbox-type">
+                <input type="checkbox" name="format" id="mid-rise">
+                <label for="mid-rise">
+                  Среднеэтажный
+                </label>
+              </li>
+              <li class="sidebar__checkbox-type">
+                <input type="checkbox" name="format" id="club house">
+                <label for="club house">
+                  Клубный дом
+                </label>
+              </li>
+              <li class="sidebar__checkbox-type">
+                <input type="checkbox" name="format" id="townhouse">
+                <label for="townhouse">
+                  Таунхаус
+                </label>
+              </li>
+              <li class="sidebar__checkbox-type">
+                <input type="checkbox" name="format" id="quadrohouse">
+                <label for="quadrohouse">
+                  Квадрохаус
+                </label>
+              </li>
+              <li class="sidebar__checkbox-type">
+                <input type="checkbox" name="format" id="linehouse">
+                <label for="linehouse">
+                  Лайнхаус
+                </label>
+              </li>
+            </ul>
+          </fieldset>
+
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <template id="card">
+    <li class="appartments__type">
+      <div class="appartments__container">
+        <!-- Изменить при добавлении разрешения -->
+        <!-- <picture>
+          <source type="image/webp" srcset="img/appartments-1.webp 1x, img/appartments-1@2x.webp 2x">
+          <img src="img/appartments-1.png" alt="Планировка квартиры" width="246" height="192"
+            srcset="img/appartments-1@2x.png 2x">
+        </picture> -->
+        <img src="img/appartments-1.png" alt="Планировка квартиры" width="246" height="192">
+        <div class="appartments__description">
+          <div class="appartments__description-wrap">
+            <span class="appartments__name">Студия</span>
+            <span class="appartments__size">, 27 м²</span>
+          </div>
+          <p class="appartments__place">ЖК Ёлки-Park</p>
+          <p class="appartments__amount">12 квартир</p>
+          <p class="appartments__price">от 3,5 млн ₽</p>
+          <a href="#" class="appartments__btn">выбери свою</a>
+          <button type="button" class="button button--like">
+            <svg width="21" height="18" viewBox="0 0 21 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="img/sprite.svg#like-icon"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </li>
+  </template>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>
